@@ -13,12 +13,6 @@ public partial class Order
 
     public DateOnly? DeliveryDate { get; set; }
 
-    public string? CustomerName { get; set; }
-
-    public string? CustomerAddress { get; set; }
-
-    public string? CustomerPhone { get; set; }
-
     public virtual ICollection<Delivery> Deliveries { get; set; } = new List<Delivery>();
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();

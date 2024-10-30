@@ -12,4 +12,10 @@ public partial class Account
     public string? Password { get; set; }
 
     public virtual User? Users { get; set; }
+
+
+    public int? GetUserID()
+    {
+        return this.UsersId;
+    }
 }

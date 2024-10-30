@@ -58,7 +58,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<Delivery>(entity =>
         {
-            entity.HasKey(e => e.DeliveryId).HasName("PK__Delivery__1C5CF4F5DC8AE060");
+            entity.HasKey(e => e.DeliveryId).HasName("PK__Delivery__1C5CF4F5CB7168C5");
 
             entity.ToTable("Delivery");
 
@@ -78,7 +78,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<Import>(entity =>
         {
-            entity.HasKey(e => e.ImportId).HasName("PK__Import__F3E6B05F44D3FC6D");
+            entity.HasKey(e => e.ImportId).HasName("PK__Import__F3E6B05FB5F5CC2F");
 
             entity.ToTable("Import");
 
@@ -93,7 +93,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<ImportDetail>(entity =>
         {
-            entity.HasKey(e => new { e.ImportId, e.ProductId }).HasName("PK__ImportDe__B7969780846E1936");
+            entity.HasKey(e => new { e.ImportId, e.ProductId }).HasName("PK__ImportDe__B7969780AA6A275B");
 
             entity.Property(e => e.ImportId).HasColumnName("import_id");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
@@ -112,20 +112,11 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PK__Order__46596229446BF0C2");
+            entity.HasKey(e => e.OrderId).HasName("PK__Order__46596229605161D8");
 
             entity.ToTable("Order");
 
             entity.Property(e => e.OrderId).HasColumnName("order_id");
-            entity.Property(e => e.CustomerAddress)
-                .HasMaxLength(255)
-                .HasColumnName("customer_address");
-            entity.Property(e => e.CustomerName)
-                .HasMaxLength(100)
-                .HasColumnName("customer_name");
-            entity.Property(e => e.CustomerPhone)
-                .HasMaxLength(15)
-                .HasColumnName("customer_phone");
             entity.Property(e => e.DeliveryDate).HasColumnName("delivery_date");
             entity.Property(e => e.OrderDate).HasColumnName("order_date");
             entity.Property(e => e.UsersId).HasColumnName("Users_id");
@@ -137,7 +128,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.HasKey(e => new { e.OrderId, e.ProductId }).HasName("PK__OrderDet__022945F62CF6AA85");
+            entity.HasKey(e => new { e.OrderId, e.ProductId }).HasName("PK__OrderDet__022945F60941DA16");
 
             entity.Property(e => e.OrderId).HasColumnName("order_id");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
@@ -162,7 +153,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Product__9833FF924B3926CB");
+            entity.HasKey(e => e.ProductId).HasName("PK__Product__9833FF929EF33A10");
 
             entity.ToTable("Product");
 
@@ -192,7 +183,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<ProductType>(entity =>
         {
-            entity.HasKey(e => e.ProductTypeId).HasName("PK__ProductT__6EED3ED65DC44C84");
+            entity.HasKey(e => e.ProductTypeId).HasName("PK__ProductT__6EED3ED62947ECCB");
 
             entity.ToTable("ProductType");
 
@@ -204,7 +195,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE3ACA1787CB");
+            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE3A2AEFEC27");
 
             entity.ToTable("Role");
 
@@ -216,7 +207,7 @@ public partial class TedShopSystemContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UsersId).HasName("PK__Users__EB6B2D4519134A05");
+            entity.HasKey(e => e.UsersId).HasName("PK__Users__EB6B2D4557B78719");
 
             entity.Property(e => e.UsersId).HasColumnName("Users_id");
             entity.Property(e => e.BankAccount)

@@ -23,6 +23,8 @@ public partial class Product
 
     public int Quantity { get; set; }
 
+    public string? Image { get; set; }
+
     public virtual ICollection<ImportDetail> ImportDetails { get; set; } = new List<ImportDetail>();
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
